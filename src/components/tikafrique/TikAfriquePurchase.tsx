@@ -22,8 +22,7 @@ const TikAfriquePurchase = () => {
 
   const handlePurchase = () => {
     if (isVideoCompleted) {
-      // TODO: Intégrer le système de paiement
-      alert('Redirection vers le paiement... (À intégrer avec Stripe/PayPal)');
+      window.open('https://quhyhlse.mychariow.com/prd_esedrv/checkout', '_blank');
     }
   };
 
@@ -70,11 +69,10 @@ const TikAfriquePurchase = () => {
               
               <button
                 onClick={handlePurchase}
-                disabled={!isVideoCompleted}
                 className={`group relative font-bold py-6 px-12 rounded-2xl text-xl transition-all duration-300 transform ${
                   isVideoCompleted
-                    ? 'bg-gradient-to-r from-green-400 to-green-600 hover:from-green-500 hover:to-green-700 hover:scale-105 hover:shadow-2xl text-white'
-                    : 'bg-gray-400 cursor-not-allowed text-gray-200'
+                    ? 'bg-gradient-to-r from-green-400 to-green-600 hover:from-green-500 hover:to-green-700 hover:scale-105 hover:shadow-2xl text-white cursor-pointer'
+                    : 'bg-gray-500 cursor-not-allowed text-gray-300 opacity-70'
                 }`}
               >
                 <div className="flex items-center justify-center gap-3">

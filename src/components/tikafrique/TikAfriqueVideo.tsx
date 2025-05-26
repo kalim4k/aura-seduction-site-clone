@@ -28,6 +28,7 @@ const TikAfriqueVideo = () => {
       
       if (percentage >= 95) {
         setIsVideoCompleted(true);
+        localStorage.setItem('tikafrique-video-completed', 'true');
       }
     }
   };
@@ -36,7 +37,10 @@ const TikAfriqueVideo = () => {
     const video = videoRef.current;
     if (video) {
       video.addEventListener('timeupdate', handleTimeUpdate);
-      video.addEventListener('ended', () => setIsVideoCompleted(true));
+      video.addEventListener('ended', () => {
+        setIsVideoCompleted(true);
+        localStorage.setItem('tikafrique-video-completed', 'true');
+      });
       
       return () => {
         video.removeEventListener('timeupdate', handleTimeUpdate);
